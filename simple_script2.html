@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Simple!</title>
+</head>
+
+<body onload="fillName()">
+
+<h1>Medals tally</h1>
+
+<form action="http://localhost:8000/test" method="POST">
+  Name:   <input name="name" id="name" readonly /> <br/>
+  Gold:   <input name="gold" type="text" /> <br/>
+  Silver: <input name="silver" type="text" /> <br/>
+  Bronze: <input name="bronze" type="text" /> <br/>
+
+  <input type="submit" value="Send" />
+</form>
+
+<script>
+function fillName() {
+  fetch("http://localhost:8000/test")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("name").value = data;
+    })
+    .catch(error => console.error("Error:", error));
+}
+</script>
+
+</body>
+</html>
