@@ -21,4 +21,4 @@ jobs:
           java-version: '17'
           
       - name: Compile Java files
-        run: javac Test.java
+        run: javac simple_server3/Test.java
