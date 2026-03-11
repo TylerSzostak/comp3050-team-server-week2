@@ -10,11 +10,12 @@ public class MyHandler implements HttpHandler {
     public void handle(HttpExchange he) throws IOException {
 
         // Handle CORS.
-        String origin = he.getRequestHeaders().getFirst("Origin");
+        /*String origin = he.getRequestHeaders().getFirst("Origin");
         he.getResponseHeaders().add("Access-Control-Allow-Origin", origin);
         he.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-        he.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type");
-
+        he.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type");*/
+        // he.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
+    
         // Set response headers.
         Headers headers = he.getResponseHeaders();
         headers.set("Content-Type", "application/JSON");
